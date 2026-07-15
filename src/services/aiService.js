@@ -1,9 +1,9 @@
 import axios from "axios";
-
+import API_URL from "../config/api";
 export const sendMessageToAI = async (message) => {
   try {
     const response = await axios.post(
-      "http://localhost:5000/api/chat",
+      `${API_URL}/api/chat`,
       {
         message,
       }
