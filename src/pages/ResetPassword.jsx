@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
 import { FaLock } from "react-icons/fa";
 import axios from "axios";
+import API_URL from "../config/api";
 
 const ResetPassword = () => {
   const { token } = useParams();
@@ -39,7 +40,7 @@ const ResetPassword = () => {
       setLoading(true);
 
       const response = await axios.post(
-        `http://localhost:5000/api/auth/reset-password/${token}`,
+        `${API_URL}/api/auth/reset-password/${token}`,
         {
           password: form.password,
         }
